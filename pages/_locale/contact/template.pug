@@ -1,0 +1,9 @@
+div.content
+  h3.title.is-3 {{$t($data.i18nPrefix + 'hero.subtitle')}}
+
+  p(v-html="$t(i18nPrefix + 'message_contact_html')")
+  p
+    | {{$t(i18nPrefix + 'message_translate')}}&nbsp;
+    nuxt-link(:to="$i18nPath('help-to-translate-the-site')") {{$t('routes.help_to_translate_the_site.hero.title')}}
+  p(v-html="$t(i18nPrefix + 'message_other_info_html')")
+

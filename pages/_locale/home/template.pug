@@ -1,0 +1,15 @@
+div(style="padding-top: 0.75rem")
+  div.columns.columns-choice
+    div.column.is-half.need-help
+      section.section
+        h3.title.is-3 {{$t(i18nPrefix + "i_need_help.title")}}
+        p.subtitle {{$t(i18nPrefix + "i_need_help.subtitle")}}
+
+        nuxt-link.button.is-large.is-outlined.is-info(:to="{ name: 'INeedHelp' }") {{$t(i18nPrefix + "i_need_help.button")}}
+
+    div.column.is-half.can-help
+      section.section(style="color: white;")
+        h3.title.is-3(style="color: white;") {{$t(i18nPrefix + "i_can_help.title")}}
+        p.subtitle(style="color: white;") {{$t(i18nPrefix + "i_can_help.subtitle")}}
+
+        nuxt-link.button.is-large.is-outlined.is-inverted.is-info(:to="{ name: 'ICanHelp' }") {{$t(i18nPrefix + "i_can_help.button")}}

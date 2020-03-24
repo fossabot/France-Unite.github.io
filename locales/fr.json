@@ -1,0 +1,124 @@
+{
+  "translation": {
+    "main_menu": {
+      "home": "Accueil",
+      "help_to_translate_the_site": "$t(routes.help_to_translate_the_site.hero.title)"
+    },
+    "footer_menu": {
+      "about": "À propos",
+      "contributors": "Contributeurs",
+      "changelog": "Changelog",
+      "contact": "Contact"
+    },
+    "site_layout": {
+      "hero": {
+        "title": "$t(common:site_title)",
+        "slogan_html": "Le but de cette plateforme est de mettre en relation des corps de médecin qui ont des besoins, avec des personnes qui peuvent répondre à leurs besoins."
+      },
+      "cookie": {
+        "message": "En continuant à utiliser $t(common:site_title), vous acceptez l'utilisation de cookies pour améliorer votre confort d'utilisation.",
+        "link": "En savoir plus"
+      },
+      "footer": {
+        "license_html": "Code source sous licence $t(common:links.mit)",
+        "version": "Version {{version}}"
+      }
+    },
+    "components": {},
+    "routes": {
+      "home": {
+        "title": "$t(common:site_title)",
+        "i_need_help": {
+          "title": "$t(routes.i_need_help.hero.title)",
+          "subtitle": "$t(routes.i_need_help.hero.subtitle)",
+          "button": "Demander de l'aide"
+        },
+        "i_can_help": {
+          "title": "$t(routes.i_can_help.hero.title)",
+          "subtitle": "$t(routes.i_can_help.hero.subtitle)",
+          "button": "Proposer de l'aide"
+        }
+      },
+      "about": {
+        "title": "À propos de $t(common:site_title)"
+      },
+      "contact": {
+        "title": "$t(routes.contact.hero.title) | $t(common:site_title)",
+        "hero": {
+          "title": "Contact",
+          "subtitle": "Contacter le mainteneur de $t(common:site_title)"
+        },
+        "message_contact_html": "Une idée de fonctionnalité ? Un problème ? N'hésitez pas m'envoyer un mail à $t(common:links.contact).",
+        "message_translate": "Savez vous que vous pouvez aussi aider à traduire le site ? suivez le lien suivant pour plus d'information :",
+        "message_other_info_html": "Si vous êtes développeurs, vous pouvez aussi créer une issue (et contribuer au développement du site) sur $t(common:links.github)."
+      },
+      "help_to_translate_the_site": {
+        "title": "$t(routes.help_to_translate_the_site.hero.title) | $t(common:site_title)",
+        "hero": {
+          "title": "Aider à traduire le site",
+          "subtitle": "Rejoindre l'équipe de traduction"
+        },
+        "p1": "Votre langue n'est pas disponible, la traduction est incomplète ou comporte des erreurs ? N'hésitez pas à rejoindre l'équipe de traduction du site.",
+        "how_to_join_the_team": "Comment rejoindre l'équipe ?",
+        "p2_html": "$t(common:site_title) est traduit par les utilisateurs. Nous utilisons la plateforme $t(common:links.translation_platform) pour faciliter le processus de traduction. Pour rejoindre l'équipe, suivez le lien suivant et inscrivez-vous : $t(common:links.translation_platform)",
+        "state_of_translation": "État de la traduction :"
+      },
+      "i_need_help": {
+        "title": "$t(routes.i_need_help.hero.title) | $t(common:site_title)",
+        "hero": {
+          "title": "J'ai besoin d'aide",
+          "subtitle": "Je suis un médecin professionel qui à des besoins spécifiques"
+        },
+        "form": {
+          "i_need": "J'ai besion de",
+          "description": "Déscription"
+        }
+      },
+      "i_can_help": {
+        "title": "$t(routes.i_can_help.hero.title) | $t(common:site_title)",
+        "hero": {
+          "title": "Je peu aider",
+          "subtitle": "Je suis un professionel avec du temps, des talents et des ressources"
+        }
+      },
+      "error": {
+        "404": {
+          "title": "Page non trouvée | $t(common:site_title)",
+          "message": "Désolé, la page que vous recherchez n'existe pas ou plus"
+        }
+      }
+    },
+    "utils": {
+      "i_am_a": "Je suis",
+      "at": "À",
+      "permalink": "Lien permanent",
+      "Add": "Ajouter",
+      "Remove": "Supprimer",
+      "Yes": "Oui",
+      "No": "Non",
+      "Ok": "Ok",
+      "Copy": "Copier",
+      "Copyed": "Copié !",
+      "Information": "Information",
+      "Reset": "Réinitialiser",
+      "Confirm": "Confirmer",
+      "Close": "Fermer",
+      "Submit": "Envoyer",
+      "Save": "Sauvegarder",
+      "Show": "Afficher",
+      "Hide": "Masquer",
+      "Next": "→",
+      "Previous": "←",
+      "Exit": "Quitter",
+      "Done": "Fini",
+      "moment": {
+        "year": "{{count}} an",
+        "year_plural": "{{count, number}} ans",
+        "month": "{{count}} mois",
+        "month_plural": "{{count}} mois",
+        "day": "{{count}} jour",
+        "day_plural": "{{count}} jours"
+      }
+    }
+  }
+}

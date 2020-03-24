@@ -1,0 +1,8 @@
+{
+  "reject": [
+    "babel-jest",
+    "eslint",
+    "jest",
+    "enumify"
+  ]
+}

@@ -1,0 +1,124 @@
+{
+  "translation": {
+    "main_menu": {
+      "home": "Home",
+      "help_to_translate_the_site": "$t(routes.help_to_translate_the_site.hero.title)"
+    },
+    "footer_menu": {
+      "about": "About",
+      "contributors": "Contributeurs",
+      "changelog": "Changelog",
+      "contact": "Contact"
+    },
+    "site_layout": {
+      "hero": {
+        "title": "$t(common:site_title)",
+        "slogan_html": "The aim of this platform is to connect doctors who have needs with people who can meet their needs."
+      },
+      "cookie": {
+        "message": "By continuing to use $t(common:site_title), you agree to the use of cookies to improve your comfort of use.",
+        "link": "More information"
+      },
+      "footer": {
+        "license_html": "Source code under $t(common:links.mit) licence ",
+        "version": "Version {{version}}"
+      }
+    },
+    "components": {},
+    "routes": {
+      "home": {
+        "title": "$t(common:site_title)",
+        "i_need_help": {
+          "title": "$t(routes.i_need_help.hero.title)",
+          "subtitle": "$t(routes.i_need_help.hero.subtitle)",
+          "button": "Asking for help"
+        },
+        "i_can_help": {
+          "title": "$t(routes.i_can_help.hero.title)",
+          "subtitle": "$t(routes.i_can_help.hero.subtitle)",
+          "button": "Offering to help"
+        }
+      },
+      "about": {
+        "title": "About $t(common:site_title)"
+      },
+      "contact": {
+        "title": "$t(routes.survey.hero.title) | $t(common:site_title)",
+        "hero": {
+          "title": "Contact",
+          "subtitle": "Contact the administrator of $t(common:site_title)"
+        },
+        "message_contact_html": "An idea to improve functionality? A problem? Feel free to send me an email (in English or in French) at $t(common:links.contact).",
+        "message_translate": "Did you know that you can also help translate the site ? Follow the following link for more information:",
+        "message_other_info_html": "If you are developers, you can also create an issue (and contribute to the development of the site) on $t(common:links.github)."
+      },
+      "help_to_translate_the_site": {
+        "title": "$t(routes.help_to_translate_the_site.hero.title) | $t(common:site_title)",
+        "hero": {
+          "title": "Help to translate the site",
+          "subtitle": "Join the translation team"
+        },
+        "p1": "Your language is not available, the translation is incomplete or contains errors? Feel free to join the site's translation team.",
+        "how_to_join_the_team": "How to join the team ?",
+        "p2_html": "$t(common:site_title) is translated by users. We use the $t(common:links.translation_platform) platform to facilitate the translation process. To join the team just visit the following link and register: $t(common:links.translation_platform)",
+        "state_of_translation": "State of the translation :"
+      },
+      "i_need_help": {
+        "title": "$t(routes.i_need_help.hero.title) | $t(common:site_title)",
+        "hero": {
+          "title": "I need help",
+          "subtitle": "I'm a professional doctor who has special needs."
+        },
+        "form": {
+          "i_need": "I need",
+          "description": "Description"
+        }
+      },
+      "i_can_help": {
+        "title": "$t(routes.i_can_help.hero.title) | $t(common:site_title)",
+        "hero": {
+          "title": "I can help",
+          "subtitle": "I'm a professional with time, talents and resources."
+        }
+      },
+      "error": {
+        "404": {
+          "title": "Page not found | $t(common:site_title)",
+          "message": "Sorry, the page you are looking for does not exist or no more"
+        }
+      }
+    },
+    "utils": {
+      "i_am_a": "I am a",
+      "at": "at",
+      "permalink": "Permalink",
+      "Add": "Add",
+      "Remove": "Remove",
+      "Yes": "Yes",
+      "No": "No",
+      "Ok": "Ok",
+      "Copy": "Copy",
+      "Copyed": "Copyed",
+      "Information": "Information",
+      "Reset": "Reset",
+      "Confirm": "Confirm",
+      "Close": "Close",
+      "Submit": "Submit",
+      "Save": "Save",
+      "Show": "Show",
+      "Hide": "Hide",
+      "Next": "→",
+      "Previous": "←",
+      "Exit": "Exit",
+      "Done": "Done",
+      "moment": {
+        "year": "{{count}} year",
+        "year_plural": "{{count, number}} years",
+        "month": "{{count}} month",
+        "month_plural": "{{count}} months",
+        "day": "{{count}} day",
+        "day_plural": "{{count}} days"
+      }
+    }
+  }
+}

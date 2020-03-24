@@ -1,0 +1,21 @@
+.need-help {
+  background: url("/img/undraw/doctor_kw5l.svg") no-repeat right bottom, #e7e6e6;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 50%;
+  color: #44546a !important;
+}
+
+.can-help {
+  background: url("/img/undraw/solution_mindset_34bi.svg") no-repeat right bottom, #44546a;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: 50%;
+  color: #ffffff !important;
+}
+
+@media screen and (min-width: 1024px) {
+  .columns-choice {
+    height: 50vh;
+  }
+}

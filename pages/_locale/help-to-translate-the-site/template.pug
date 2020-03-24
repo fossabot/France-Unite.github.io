@@ -1,0 +1,10 @@
+div.content
+  h3.title.is-3 {{$t('main_menu.help_to_translate_the_site')}}
+
+  p {{$t(i18nPrefix + 'p1')}}
+
+  h4.title.is-4 {{$t($data.i18nPrefix + 'how_to_join_the_team')}}
+
+  p(v-html="$t($data.i18nPrefix + 'p2_html')")
+
+  p {{$t($data.i18nPrefix + 'state_of_translation')}}

@@ -1,0 +1,24 @@
+div
+  b-dropdown
+    button.button(slot="trigger")
+      article.media
+        .media-left
+          span {{countryFlagEmoji.get(this.$i18n.i18next.language === "en" ? "GB" : getCurrentCountry(this.$i18n.i18next.language)).emoji}}
+        .media-content {{ $t('lang.' + this.$i18n.i18next.language + '.original') }}
+        .media-right(v-if="this.$i18n.i18next.language === 'en'")
+          span {{countryFlagEmoji.get("US").emoji}}
+      span.icon
+        i.fas.fa-chevron-down
+
+    b-dropdown-item(v-for="lang in supportedLocales" :key="lang.key" data-lang="lang" @click="currentLang = lang.key" :class="[lang.key === currentLang ? 'is-active' : '']")
+      article.media
+        .media-left
+          span {{countryFlagEmoji.get(lang.key === "en" ? "GB" : getCurrentCountry(lang.key)).emoji}}
+        .media-content {{ lang.displayName }}
+        .media-right(v-if="lang.key === 'en'")
+          span {{countryFlagEmoji.get("US").emoji}}
+    hr.navbar-divider
+    b-dropdown-item(@click="$router.push($i18nPath('help-to-translate-the-site'))")
+      span.icon.is-icon-2rem(style="vertical-align: middle;")
+        i.fas.fa-language
+      span(style="vertical-align: middle;") &nbsp;&nbsp;&nbsp;{{$t("main_menu.help_to_translate_the_site")}}

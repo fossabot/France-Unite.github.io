@@ -1,0 +1,23 @@
+div.content
+  h3.title.is-3 {{$t($data.i18nPrefix + 'hero.title')}}
+
+  div.columns.form-short
+    div.column.is-half
+      b-field#fieldIAmA(:label="$t('utils.i_am_a')" label-for="iAmA")
+        b-select#iAmA(v-model="iAmA" name="iAmA" expanded)
+          option(v-for="position in jobPositions" :value="position") {{$t('medicine_jobs.' + position)}}
+    div.column.is-half#fieldINeed
+      b-field#fieldIAmA(:label="$t(i18nPrefix + 'form.i_need')" label-for="iNeed")
+        b-select#iNeed( v-model="iNeed" name="iNeed" expanded)
+          option(v-for="need in needs" :value="need") {{$t('needs.' + need)}}
+
+  div.columns
+    div.column.is-full
+      b-field#fieldAt(:label="$t('utils.at')" label-for="at")
+        // TODO
+        b-input(placeholder="TODO")
+
+  div.columns
+    div.column.is-full
+      b-field#fieldDescription(:label="$t(i18nPrefix + 'form.description')" label-for="description")
+        Editor#description(apiKey="edruo5vcdqlgi1axhcsu01y599w3qjo9lcy59wt63ybjimz9" v-model="description")

@@ -1,0 +1,17 @@
+.git/
+.idea/
+.src*/
+.nuxt/
+node_modules/
+dist/
+.cache/
+coverage/
+*.log
+*.bak.js
+*.bak
+*.marko.js
+.DS_STORE
+dump.rdb
+.marko-devtools/
+static/sitemap.xml
+sw.*

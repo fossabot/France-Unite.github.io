@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html {{ HTML_ATTRS }}>
+  <head>
+    {{ HEAD }}
+    <script src="https://www.google.com/recaptcha/api.js?onload=vueRecaptchaInit&render=explicit" async defer></script>
+  </head>
+  <body {{ BODY_ATTRS }}>
+    <noscript>
+      <section>
+        <div class="modal is-active">
+          <div class="modal-background"></div>
+          <div class="modal-content">
+            <article class="message is-danger">
+              <div class="message-header">JavaScript as not activated</div>
+              <div class="message-body">
+                <div class="media">The site needs JavaScript to work. Thank you to activate it.</div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+    </noscript>
+    {{ APP }}
+  </body>
+</html>

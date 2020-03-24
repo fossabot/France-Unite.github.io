@@ -1,0 +1,47 @@
+#app
+  header
+    nav.navbar
+      .container
+        div.navbar-brand
+          nuxt-link.navbar-item(:to="{ name: 'Home' }")
+            img(src='/icon.png' alt='Logo')
+          div.navbar-burger.burger(:class="{'is-active': burgerMenuVisible}" data-target="mainNavbar" @click="toggleMenu")
+            span
+            span
+            span
+
+        div#mainNavbar.navbar-menu(:class="{'is-active': burgerMenuVisible}")
+          .navbar-end
+            span.navbar-item
+              nuxt-link.button.is-black.is-outlined(:to="{ name: 'Home' }")
+                span.icon
+                  i.fa.fa-home
+                span {{$t("main_menu.home")}}
+            div.navbar-item
+              language-selector
+            span.navbar-item
+              a.button.is-black.is-outlined(href='https://github.com/')
+                span.icon
+                  i.fab.fa-github
+
+  main.container.is-fullheight
+    section.section
+      div.container
+        div.columns.is-centered
+          div.column.is-11-desktop.is-three-quarters-fullhd.is-three-quarters-widescreen.is-full-tablet
+            div.card.article
+              div.card-content
+                div.content.article-body
+                  nuxt
+
+  footer.footer.has-text-centered
+    div.container
+      div.columns
+        div.column.is-8-desktop.is-offset-2-desktop
+          nav.breadcrumb.has-dot-separator.is-centered.is-marginless(aria-label="breadcrumbs")
+            ul
+              li(v-for="footerLink in footerLinks" :class="{ 'is-active': $route.name === footerLink.link }")
+                nuxt-link(:to="{ name: footerLink.link }" exact) {{$t('footer_menu.' + footerLink.key)}}
+          p
+            small(v-html="$t('site_layout.footer.license_html')")
+          p {{$t('site_layout.footer.version', {version: siteVersion})}}

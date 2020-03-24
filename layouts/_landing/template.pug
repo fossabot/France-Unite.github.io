@@ -1,0 +1,40 @@
+#app
+  header
+    nav.navbar
+      .container
+        .navbar-brand
+          nuxt-link.navbar-item(:to="{ name: 'Home' }")
+            img(src='/icon.png' alt='Logo')
+          span.navbar-burger.burger(data-target='navbarMenu')
+            span
+            span
+            span
+        #mainNavbar.navbar-menu
+          .navbar-end
+            span.navbar-item(v-for="value in mainMenu")
+
+              nuxt-link.button.is-black(:to="{ name: 'Home' }" :class="{'is-outlined': !isActive(value.link)}")
+                span.icon
+                  i.fa.fa-home
+                span {{$t("main_menu.home")}}
+            div.navbar-item
+              language-selector
+            span.navbar-item
+              a.button.is-black.is-outlined(href='https://github.com/')
+                span.icon
+                  i.fab.fa-github
+
+  main.is-fullheight
+    nuxt
+
+  footer.footer.has-text-centered
+    div.container
+      div.columns
+        div.column.is-8-desktop.is-offset-2-desktop
+          nav.breadcrumb.has-dot-separator.is-centered.is-marginless(aria-label="breadcrumbs")
+            ul
+              li(v-for="footerLink in footerLinks" :class="{ 'is-active': $route.name === footerLink.link }")
+                nuxt-link(:to="{ name: footerLink.link }" exact) {{$t('footer_menu.' + footerLink.key)}}
+          p
+            small(v-html="$t('site_layout.footer.license_html')")
+          p {{$t('site_layout.footer.version', {version: siteVersion})}}

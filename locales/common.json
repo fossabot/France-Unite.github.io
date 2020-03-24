@@ -1,0 +1,18 @@
+{
+  "common": {
+    "site_title": "Mon super site",
+    "lang": {
+      "en": { "original": "English" },
+      "fr": { "en": "French", "original": "Français" }
+    },
+    "language_selector": {
+      "en": "$t(common:lang.en.original)",
+      "common": "$t(common:lang.{{lang}}.en) ($t(common:lang.{{lang}}.original))"
+    },
+    "links": {
+      "mit": "<a href=\"http://opensource.org/licenses/mit-license.php\">MIT</a>",
+      "github": "<a href=\"https://github.com/France-Unite/France-Unite.github.io\">GitHub</a>",
+      "contact": "<a href=\"mailto:franceuniteRC19@gmail.com\">franceuniteRC19@gmail.com</a>"
+    }
+  }
+}

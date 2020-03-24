@@ -1,0 +1,8 @@
+.b-numberinput.field(:class='fieldClasses')
+  p.control
+    span.button(type='button' :class='buttonClasses' :disabled='disabled || disabledMin' @mousedown='onStartLongPress($event, false)' @mouseup='onStopLongPress(false)' @mouseleave='onStopLongPress(false)' @touchstart.prevent='onStartLongPress($event, false)' @touchend='onStopLongPress(false)' @touchcancel='onStopLongPress(false)' @click='onControlClick($event, false)')
+      b-icon(icon='minus' :pack='iconPack' :size='iconSize')
+  b-input(type='number' ref='input' v-model.number='computedValue' v-bind='$attrs' :step='newStep' :max='max' :min='min' :size='size' :disabled='disabled' :readonly='!editable' :loading='loading' :rounded='rounded' :icon='icon' :icon-pack='iconPack' :autocomplete='autocomplete' :expanded='expanded' @focus="$emit('focus', $event)" @blur="$emit('blur', $event)")
+  p.control
+    span.button(type='button' :class='buttonClasses' :disabled='disabled || disabledMax' @mousedown='onStartLongPress($event, true)' @mouseup='onStopLongPress(true)' @mouseleave='onStopLongPress(true)' @touchstart.prevent='onStartLongPress($event, true)' @touchend='onStopLongPress(true)' @touchcancel='onStopLongPress(true)' @click='onControlClick($event, true)')
+      b-icon(icon='plus' :pack='iconPack' :size='iconSize')

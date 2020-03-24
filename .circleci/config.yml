@@ -1,0 +1,131 @@
+version: 2
+
+defaults: &defaults
+  working_directory: ~/project
+  docker:
+    - image: circleci/node:latest
+  environment:
+    NODE_ENV: test
+    NODE_OPTIONS: --max_old_space_size=4096
+
+release_branches: &release_branches
+  branches:
+    only:
+      - production
+
+ignore_master: &ignore_master
+  branches:
+    ignore:
+      - master
+
+release: &release
+  <<: *defaults
+  steps:
+    - checkout
+    - attach_workspace:
+        at: ~/project
+    - run:
+        name: Build project
+        command: yarn run generate:gh
+    - run:
+        name: Configure git
+        command: |
+          git config user.name $GITHUB_NAME
+          git config user.email $GITHUB_EMAIL
+    - add_ssh_keys:
+        fingerprints:
+          - "42:b6:1a:60:65:91:8a:eb:e9:6e:1d:91:1d:cc:66:d1"
+    # This will build the static site and push into master branch
+    - run:
+        name: release
+        command: yarn run deploy
+        environment:
+          NODE_ENV: production
+
+jobs:
+  # --------------------------------------------------------------------------
+  # Phase 1: Setup
+  # --------------------------------------------------------------------------
+  setup:
+    <<: *defaults
+    steps:
+      # Checkout repository
+      - checkout
+
+      # Restore cache
+      - restore_cache:
+          key: lock-{{ checksum "package-lock.json" }}
+
+      # Save cache
+      - save_cache:
+          key: lock-{{ checksum "package-lock.json" }}
+          paths:
+            - node_modules
+
+      # Install dependencies
+      - run:
+          name: Install Dependencies
+          command: npm ci
+
+      # Persist workspace
+      - persist_to_workspace:
+          root: ~/project
+          paths:
+            - node_modules
+
+  # --------------------------------------------------------------------------
+  # Phase 2: Lint
+  # --------------------------------------------------------------------------
+  lint:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Lint
+          command: yarn test:lint
+
+  # --------------------------------------------------------------------------
+  # Phase 3: Unit
+  # --------------------------------------------------------------------------
+  test-unit:
+    <<: *defaults
+    steps:
+      - checkout
+      - attach_workspace:
+          at: ~/project
+      - run:
+          name: Unit Tests
+          command: yarn test:unit:coverage --coverageReporters lcov && yarn coverage
+
+  # --------------------------------------------------------------------------
+  # Phase 4: Release (production branch only)
+  # --------------------------------------------------------------------------
+  release-commit:
+    <<: *release
+
+# Workflow definition
+workflows:
+  version: 2
+
+  # Build and test after each commit
+  # Manually release on release branches
+  commit:
+    jobs:
+      - setup:
+          filters:
+            <<: *ignore_master
+      - lint:
+          requires: [setup]
+          filters:
+            <<: *ignore_master
+      - test-unit:
+          requires: [lint]
+          filters:
+            <<: *ignore_master
+      - release-commit:
+          requires: [lint, test-unit]
+          filters:
+            <<: *release_branches
+            <<: *ignore_master
